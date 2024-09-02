@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Funtion, Object, Array</h1>
+    <h2>Funtion</h2>
+    <p>
+      1.Через витік із бака охолодження щодня витікає 10% налитої води. При
+      об'ємі води менше, ніж 10 літрів виникає аварійна ситуація. Створіть
+      програму, яка запитує у користувача початковий обсяг води і розраховує, на
+      скільки днів роботи цього вистачить.
+    </p>
+    <input class="water" type="number" />
+    <input id="water_send" type="button" />
+    <p class="result">Result: 0 days</p>
+
+    <br />
+    <br />
+    <br />
+
+    <p>
+      2.Створіть функцію numbers(), яка підраховуватиме кількість переданих
+      числових аргументів. Наприклад, numbers(1, 2, "a") поверне значення 2,
+      numbers(true, 2, false) -1, numbers() — 0.
+    </p>
+    <div class="code_container">
+      <code
+        >let countNumber = 0; <br />
+        function numbers(...theNumb) <br />
+        { for (const number of theNumb) { <br />
+        if (typeof number === "number") { <br />
+        countNumber++; } <br />
+        } console.log(countNumber); } <br />
+        <br />
+        numbers(1, 2, 3, 5, true, false, 85, true, "34");
+        <br />
+        Перевірка в консолі - 5.
+      </code>
+    </div>
+
+    <p>
+      3.Напишіть рекурсивну функцію, яка виводить число «справа наліво», тобто
+      остання цифра числа стає першою, передостання — другою тощо. Підказка:
+      остання цифра числа «х» — це залишок від ділення на 10 (х%10), а решту
+      цифр можна відокремити, поділивши «х» на 10 націло (parseInt(х/10)).
+    </p>
+    <input class="get_number" type="number" />
+    <input id="send_reverse" type="button" />
+    <p class="number_result">Reversed number:</p>
+    <p class="Fail">Вирішив з допомогою GPT</p>
+
+    <h2>Object</h2>
+    <p>4.Створити об'єкт "Квиток у кіно" і визначити всі його властивості.</p>
+
+    <div class="code_container">
+      <code>
+        const ticket = { <br />
+        movie: "Shrek 5", <br />
+        date: "20.12.2028", <br />
+        place: "5B", <br />
+        time: "18:24", <br />
+        };
+      </code>
+    </div>
+
+    <p>5.Створити об'єкт "проект". Він має назву, наприклад, FaceBook.</p>
+
+    <div class="code_container">
+      <code>
+        const project = { <br />
+        name: "FaceBook", <br />
+        developer: "BestDeveloper", <br />
+        adress: "BestAddress", <br />
+        country: "GoodCountry", <br />
+        city: "LovelyCity", <br />
+        };
+      </code>
+    </div>
+
+    <p>
+      6.Створити функцію для копіювання об'єкта користувача. Користувач має ім'я
+      та прізвище.
+    </p>
+
+    <div class="code_container">
+      <code>
+        const player = { <br />
+        name: "Player1", <br />
+        lastName: "Winner", <br />
+        }; <br />
+        <br />
+        function copyObj({ ...n }) { <br />
+        return n; <br />
+        } <br />
+        <br />
+        const copy_player = copyObj(player); <br />
+        copy_player.name = "Player 2"; <br />
+        copy_player.lastName = "loser"; <br />
+        <br />
+        <br />
+        console.log(copy_player); <br />
+        console.log(player); <br />
+      </code>
+    </div>
+
+    <p>
+      7.Написати функцію, яка приймає об'єкт та назву властивості, перевіряє їх
+      наявність у об'єкті і повертає true або false.
+    </p>
+
+    <div class="code_container">
+      <code>
+        function haveIt(name, val) { <br />
+        let result; <br />
+        for (key in name) { <br />
+        if (key === val) { <br />
+        result = true; <br />
+        return true; <br />
+        } else { <br />
+        result = false; <br />
+        } <br />
+        } <br />
+        return result; <br />
+        } <br />
+        <br />
+        console.log(haveIt(player, "lastName")) - true; <br />
+        console.log(haveIt(player, "qweame")) - false;
+      </code>
+    </div>
+
+    <h2>Array</h2>
+    <p>
+      8.Створити функцію-конструктор User, яка буде зберігати наступну
+      інформацію про користувача: повне ім'я, вік, стать, електронну пошту,
+      країну проживання, заробітну плату, посаду, відділ; Створити масив
+      користувачів (10 штук).
+    </p>
+    <div class="code_container">
+      <code>
+        console.log("connect 5"); <br />
+        <br />
+        function User(name, age, gender, mail, state, money, post, department) {
+        <br />
+        this.name = name; <br />
+        this.age = age; <br />
+        this.gender = gender; <br />
+        this.mail = mail; <br />
+        this.state = state; <br />
+        this.money = money; <br />
+        this.post = post; <br />
+        this.department = department;<br />
+        } <br />
+        const userArr = []; <br />
+        userArr.push( <br />
+        new User( "Nilolas Wimpl", 34, "male", "qwerasd@gmail.com", "France",
+        3200, "worker", 322 ), <br />
+        new User( "Maks Washington", 42, "male", "sadqsd12@gmail.com", "USA",
+        3200, "worker", 322 ), <br />
+        new User( "Mike Welaskis", 32, "male", "ghrasd@gmail.com", "Italy",
+        3200, "worker", 323 ), <br />
+        new User( "July Niklsoft", 32, "female", "wetoi@gmail.com", "Italy",
+        3200, "worker", 254 ), <br />
+        new User( "Ellizabet Watson", 29, "female", "zxceqwei@gmail.com", "USA",
+        3200, "worker", 254 ), <br />
+        new User( "Alen Delon", 32, "male", "wetoi@gmail.com", "France", 9200,
+        "headOfdepartment", 323 ), <br />
+        new User( "Alice Mirrorwill", 35, "female", "qaasstoi@gmail.com", "USA",
+        8200, "headOfdepartment", 534 ), <br />
+        new User( "Sami Naseri", 34, "male", "wetoi@gmail.com", "France", 5200,
+        "taxist", 1 ), <br />
+        new User( "Angelina Jolie", 35, "female", "lkaoq@gmail.com", "USA",
+        9200, "addDepartament", 254 ), <br />
+        new User( "Bread Pit", 42, "male", "sertodl@gmail.com", "USA", 12200,
+        "President", 0 ), <br />
+        new User( "July Fox", 29, "female", "zxcasi@gmail.com", "USA", 5200,
+        "secretary", 5 ) <br />
+        ); <br />
+        <br />
+        console.log(userArr);
+      </code>
+    </div>
+
+    <p>
+      9.Отримати користувачів, у яких електронна пошта закінчується на
+      "@gmail.com" (Масив користувачів).
+    </p>
+    <div class="code_container">
+      <code
+        >const gmail_user = userArr.filter((User) =>
+        User.mail.endsWith("@gmail.com")); <br />
+        console.log(gmail_user); - 11 of 11 use gmail
+      </code>
+    </div>
+    <p>
+      10.Отримати електронні пошти всіх повнолітніх жінок, не старших 30 років,
+      що проживають в Україні (Масив рядків).
+    </p>
+    <div class="code_container">
+      <code>
+        const femaleWorker = userArr.filter((User) => User.gender === "female");
+        <br />
+        const fullAge = femaleWorker.filter((User) => User.age > 18); <br />
+        const ageFilter = fullAge.filter((User) => User.age < 30); <br />
+        const stateFilter = ageFilter.filter((User) => User.state ===
+        "Ukraine"); <br />
+        const getEmail = stateFilter.map((User) => User.mail); <br />
+        console.log(getEmail);
+      </code>
+    </div>
+    <p>11.Отримати всі вікові показники повнолітніх чоловіків (Масив чисел).</p>
+    <div class="code_container">
+      <code>
+        const maleWorker = userArr.filter((User) => User.gender === "male");
+        <br />
+        const fullAgeMan = maleWorker.filter((User) => User.age > 18); <br />
+        const ageOfMan = fullAgeMan.map((User) => User.age); <br />
+        console.log(ageOfMan); - 34, 42, 32, 32, 34, 42
+      </code>
+    </div>
+
+    <p>12.Знайти найстаршого користувача (Користувач).</p>
+    <div class="code_container">
+      <code>
+        let old = 0; <br />
+        for (let user of userArr) { <br />
+        if (user.age > old) { <br />
+        old = user.age; <br />
+        } <br />
+        } <br />
+
+        const oldestUser = userArr.find((User) => User.age === old); <br />
+        console.log(oldestUser);
+      </code>
+    </div>
+    <script type="module" src="./js/First.js"></script>
+    <script type="module" src="./js/Second.js"></script>
+    <script type="module" src="./js/Third.js"></script>
+    <script type="module" src="./js/Fourth.js"></script>
+    <script type="module" src="./js/Fifth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+p {
+  max-width: 800px;
+}
+
+code {
+  color: white;
+}
+
+.code_container {
+  background-color: black;
+  max-width: 500px;
+  padding: 20px 10px;
+}
+
+.Fail {
+  padding: 10px;
+  font-size: 15px;
+  color: red;
+  background-color: black;
+  max-width: 400px;
+}
